@@ -1,0 +1,37 @@
+
+  <div class="container">
+    <div class="col-md-10">
+      <form [formGroup]="herbform" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="">ชื่อสมุนไพร</label>
+          <input type="text" class="form-control" formControlName="HerbName"[ngClass]="{ 'is-invalid': submitted && validate.HerbName.errors }"/>
+          <div *ngIf="submitted && validate.HerbName.errors" class="invalid-feedback">
+              <div *ngIf="validate.HerbName.errors.required">กรุณากรอกข้อมูล</div>
+            </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="">ลักษณะ</label>
+          <input type="text" class="form-control" formControlName="HerbNature"[ngClass]="{ 'is-invalid': submitted && validate.HerbNature.errors }" />
+          <div *ngIf="submitted && validate.HerbNature.errors" class="invalid-feedback">
+              <div *ngIf="validate.HerbNature.errors.required">กรุณากรอกข้อมูล</div>
+            </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="">สรรพคุณ</label>
+          <input type="text" class="form-control" formControlName="HerbProperties"[ngClass]="{ 'is-invalid': submitted && validate.HerbProperties.errors }" />
+          <div *ngIf="submitted && validate.HerbProperties.errors" class="invalid-feedback">
+              <div *ngIf="validate.HerbProperties.errors.required">กรุณากรอกข้อมูล</div>
+            </div>
+          
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success">บันทึก</button>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+
+

@@ -1,0 +1,33 @@
+<div>
+  <div class="pull-right">
+    <button type="button" class="btn btn-success" (click)="gotoCreate()">เพิ่มข้อมูล</button>
+  </div>
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ลำดับ</th>
+        <th scope="col">ชื่อสมุนไพร</th>
+        <th scope="col">ลักษณะ</th>
+        <th scope="col">สรรพคุณ</th>
+        <th scope="col">จัดการข้อมูล</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of herb">
+        <td>{{item.herbId}}</td>
+        <td>{{item.herbName}}</td>
+        <td>{{item.herbNature}}</td>
+        <td>{{item.herbProperties}}</td>
+       
+        <td>
+          
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button class="btn btn-info">แก้ไข</button>
+            <button type="button" class="btn btn-danger"(click)="onDelete(item.herbId)">ลบ</button>
+          </div>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
